@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="面经,">
+  <meta name="keywords" content="测试笔记,">
 
 
 
@@ -81,24 +81,33 @@
 
 
 
-<meta name="description" content="经典等价类划分面试题-【购成三角形】问题思考需求说明：一个程序读入三个整数，把这三个数值看作一个三角形的3条边的长度值利用等价类划分法，给出足够的测试用例。程序打印信息，说明三角形是不等边、等腰、等边。">
-<meta name="keywords" content="面经">
+<meta name="description" content="测试优先级排序： 功能测试 → 自动化测试 → 安全测试 → 性能测试  白盒测试一、逻辑覆盖 逻辑覆盖是白盒中最主要的测试方法 分为语句覆盖、判定覆盖、条件覆盖、判定-条件覆盖、条件组合覆盖、其基本思路不同，产生的测试用例不同，覆盖范围也有所不同。">
+<meta name="keywords" content="测试笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章第一篇">
-<meta property="og:url" content="http://www.imviv.com/2019/05/07/测试文章第一篇/index.html">
+<meta property="og:title" content="功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用">
+<meta property="og:url" content="http://www.imviv.com/2019/05/07/功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用/index.html">
 <meta property="og:site_name" content="I&#39;M Viv">
-<meta property="og:description" content="经典等价类划分面试题-【购成三角形】问题思考需求说明：一个程序读入三个整数，把这三个数值看作一个三角形的3条边的长度值利用等价类划分法，给出足够的测试用例。程序打印信息，说明三角形是不等边、等腰、等边。">
+<meta property="og:description" content="测试优先级排序： 功能测试 → 自动化测试 → 安全测试 → 性能测试  白盒测试一、逻辑覆盖 逻辑覆盖是白盒中最主要的测试方法 分为语句覆盖、判定覆盖、条件覆盖、判定-条件覆盖、条件组合覆盖、其基本思路不同，产生的测试用例不同，覆盖范围也有所不同。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421155405955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421155420390.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424211724992.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424211730465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424211736717.png">
-<meta property="og:updated_time" content="2019-05-07T06:09:31.194Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430095316884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430095401598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430112529178.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430132814480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430132310936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430132409200.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430133502145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430133700552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430145316334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430151413701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430151449177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430153946805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430160004568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430160814445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-05-07T08:10:29.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试文章第一篇">
-<meta name="twitter:description" content="经典等价类划分面试题-【购成三角形】问题思考需求说明：一个程序读入三个整数，把这三个数值看作一个三角形的3条边的长度值利用等价类划分法，给出足够的测试用例。程序打印信息，说明三角形是不等边、等腰、等边。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190421155405955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用">
+<meta name="twitter:description" content="测试优先级排序： 功能测试 → 自动化测试 → 安全测试 → 性能测试  白盒测试一、逻辑覆盖 逻辑覆盖是白盒中最主要的测试方法 分为语句覆盖、判定覆盖、条件覆盖、判定-条件覆盖、条件组合覆盖、其基本思路不同，产生的测试用例不同，覆盖范围也有所不同。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190430095316884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
 
 
 
@@ -128,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://www.imviv.com/2019/05/07/测试文章第一篇/">
+  <link rel="canonical" href="http://www.imviv.com/2019/05/07/功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用/">
 
 
 
 
 
-  <title>测试文章第一篇 | I'M Viv</title>
+  <title>功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用 | I'M Viv</title>
   
 
 
@@ -303,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.imviv.com/2019/05/07/测试文章第一篇/">
+    <link itemprop="mainEntityOfPage" href="http://www.imviv.com/2019/05/07/功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Viv">
@@ -320,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">测试文章第一篇</h1>
+          <h1 class="post-title" itemprop="name headline">功能测试笔记PART4-白盒、性能、自动化延申，测试工具使用</h1>
         
 
         <div class="post-meta">
@@ -332,7 +341,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:54:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T15:09:23+08:00">
                 2019-05-07
               </time>
             
@@ -392,19 +401,54 @@
       
 
       
-        <h2 id="经典等价类划分面试题-【购成三角形】问题思考"><a href="#经典等价类划分面试题-【购成三角形】问题思考" class="headerlink" title="经典等价类划分面试题-【购成三角形】问题思考"></a>经典等价类划分面试题-【购成三角形】问题思考</h2><p>需求说明：一个程序读入三个整数，把这三个数值看作一个三角形的3条边的长度值<br>利用等价类划分法，给出足够的测试用例。<br>程序打印信息，说明三角形是不等边、等腰、等边。<br><a id="more"></a></p>
-<p><strong>1、如何选定功能点？</strong><br>实际工作中功能点的确认依赖于需求给定，或者更确切一点就是输出结果的类型。</p>
-<p>比如此题：</p>
-<ol>
-<li>如果输出结果只有两种 “能构成三角形”和“不能构成三角形”，那么有效等价类就只有①a\b\c&gt;0 ②a+b&gt;c,a+c&gt;b,b+c&gt;a </li>
-<li>然而题中规定输出三种结果“不等边”、“等腰”、“等边”，所以等价类划分应该以此为依据。</li>
+        <blockquote>
+<p>测试优先级排序： 功能测试 → 自动化测试 → 安全测试 → 性能测试</p>
+</blockquote>
+<h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><h2 id="一、逻辑覆盖"><a href="#一、逻辑覆盖" class="headerlink" title="一、逻辑覆盖"></a>一、逻辑覆盖</h2><ol>
+<li>逻辑覆盖是白盒中最主要的测试方法</li>
+<li>分为语句覆盖、判定覆盖、条件覆盖、判定-条件覆盖、条件组合覆盖、其基本思路不同，产生的测试用例不同，覆盖范围也有所不同。<a id="more"></a>
+</li>
 </ol>
-<p><strong>2、有效类和无效类是否需要对应？每个功能点是否必须同时具有有效类和无效类？</strong><br>有效类和无价类之间并没有一一对应的关系，可以分开划分。<strong>一个功能点会产生多个用例，用例通过不同设计方法来实现，所以功能点跟等价类并没有对应关系。</strong></p>
-<p><strong>3、是否需要考虑输入数字的先后关系？</strong><br>如果是三个不同入参，在设计用例时，对a、b、c分别进行区分。</p>
-<p>参考答案<img src="https://img-blog.csdnimg.cn/20190421155405955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190421155420390.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="经典因果图判定表面试题-【犯错扣工资】问题"><a href="#经典因果图判定表面试题-【犯错扣工资】问题" class="headerlink" title="经典因果图判定表面试题-【犯错扣工资】问题"></a>经典因果图判定表面试题-【犯错扣工资】问题</h1><p>问题描述：<br>年薪a1 月薪a2<br>普通错误a3 严重错误a4<br>a1犯普通错误扣工资2% （b1）  a1 犯严重错误扣6% （b2）<br>a2 犯普通错误扣4% （b3） a2 犯严重错误扣8% （b4）<br>其中 a1 a2、 b1b2 和 b3b4互斥 a3和a4可以同时具备<br><img src="https://img-blog.csdnimg.cn/20190424211724992.png" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190424211730465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424211736717.png" alt="在这里插入图片描述"></p>
-
+<h2 id="二、语句覆盖"><a href="#二、语句覆盖" class="headerlink" title="二、语句覆盖"></a>二、语句覆盖</h2><p>设计测试用例，运行被测程序，使程序中的每个可执行语句至少被执行一次。<br>基本思想：每个判断的取真值和取假值都至少经历一次。</p>
+<h2 id="三、条件覆盖"><a href="#三、条件覆盖" class="headerlink" title="三、条件覆盖"></a>三、条件覆盖</h2><p>使每个条件的取真值和取假值都至少经历一次。</p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><p>WEB 自动化<br>APP 自动化<br>接口自动化<br><img src="https://img-blog.csdnimg.cn/20190430095316884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="自动化测试框架"><br><img src="https://img-blog.csdnimg.cn/20190430095401598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="自动化测试的意义"><br>自动化测试应用场景分析：<br>1、需求变更由计划性，并且频率不高<br>2、项目周期长，资源丰富<br>3、脚本重复利用率<br>4、代码规范</p>
+<p>普遍存在的观点:认为自动化测试更适合回归测试和 API 测试，手工测试更适合做验收测试和 GUI 测试。<br>正确的观点：<strong>什么区分了手工测试和自动化测试，实际上应该从代码是业务逻辑相关还是基础性代码出发。</strong><br>业务逻辑代码对应的是终端用户使用的功能，是实际完成工作的。<br>基础性代码则确保业务逻辑代码运行在合适的环境中起支撑作用而彼此相对独立，并不存在业务关系的。</p>
+<p>常见的 web 自动化测试工具：<br>QTP：脚本语言 VBScript<br>Selenium（WebDriver）：开源，仅支持 web 页面测试，需要编写自动化脚本。</p>
+<h2 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a>Selenium</h2><p>WeDriver<br>1、JDK 安装<br>三个环境变量：<br>PATH：新增%JAVA_HOME%\bin %JAVA_HOME%\jre\bin 两条<br>JAVA_HOME：JDK 安装路径 如 E:\Program Files\Java\jdk-12.0.1<br>CLASSPATH：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>检查安装成功：cmd→ 输入 java-version<img src="https://img-blog.csdnimg.cn/20190430112529178.png" alt="jdk环境配置成功"><br>2、用 python 语言写脚本（自用）</p>
+<ol>
+<li><p>安装 annconda （官网：<a href="https://www.anaconda.com/）" target="_blank" rel="noopener">https://www.anaconda.com/）</a> 安装注意选择 all users + auto path</p>
+</li>
+<li><p>下载安装 VS code</p>
+<p>拓展搜索 python，安装 <img src="https://img-blog.csdnimg.cn/20190430132814480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>选择 python 解释器 ：<br>ctrl+shift+p → python：select interpreter ：选择安装在 anaconda 中的 python<br><img src="https://img-blog.csdnimg.cn/20190430132310936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="选择python解释器"></p>
+</li>
+<li><p>安装 selenium：<br>终端输入 pip install selenium 已经装好会显示：<br><img src="https://img-blog.csdnimg.cn/20190430132409200.png" alt="在这里插入图片描述"></p>
+</li>
+<li>安装 firefox 与 chrome 驱动：<br>chromedriver 下载页（含对应版本）： <a href="http://npm.taobao.org/mirrors/chromedriver" target="_blank" rel="noopener">http://npm.taobao.org/mirrors/chromedriver</a><br>feckodriver：<br><a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener">https://github.com/mozilla/geckodriver/releases</a><br>下载完毕将 chromedriver.exe 和 geckodriver.exe 的文件路径配置到环境变量 path 中<br><img src="https://img-blog.csdnimg.cn/20190430133502145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6、VS code 新建.py 文件<br>运行代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">from selenium import webdriver</span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(&apos;http://www.github.com/&apos;)</span><br></pre></td></tr></table></figure>
+<p>结果如下：<br><img src="https://img-blog.csdnimg.cn/20190430133700552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="web-安全测试"><a href="#web-安全测试" class="headerlink" title="web 安全测试"></a>web 安全测试</h1><p>web 应用：<br>web 应用时由动态脚本、编译过的代码等组合而成<br>架设在 web 服务器上，用户在 web 浏览器上发送请求。<br>http 协议</p>
+<p>web 应用三层架构：<strong>用户端-中间层（web 服务器）-数据层</strong><br><img src="https://img-blog.csdnimg.cn/20190430145316334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>安全测试主要是在中间层进行， 尤其是 web 层到应用层的传输是安全测试的重点。<br>常用的安全手段：<br>① 登录输入验证码（防脚本、机器人等）<br>② 长时间不操作，session 会失效<br>③https</p>
+<h2 id="WEB-安全漏洞分类"><a href="#WEB-安全漏洞分类" class="headerlink" title="WEB 安全漏洞分类"></a>WEB 安全漏洞分类</h2><h3 id="WASC"><a href="#WASC" class="headerlink" title="WASC"></a>WASC</h3><p><strong>web application security consortium</strong>负责为 WWW 制定应用安全规范<br>六大类安全威胁：<br>Authentication（验证）：确认应用身份的攻击手段<br>Authorization（授权）：<br>Client-Side Attacks（客户端攻击）：扰乱或探测 web 站点用户的攻击手段<br>Information Disclosure（信息暴露）：获取站点具体系统信息的攻击手段<br>Logical Attacks （逻辑性攻击）</p>
+<h3 id="OWASP"><a href="#OWASP" class="headerlink" title="OWASP"></a>OWASP</h3><p><img src="https://img-blog.csdnimg.cn/20190430151413701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190430151449177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="自动化审计工具"><a href="#自动化审计工具" class="headerlink" title="自动化审计工具"></a>自动化审计工具</h3><p>AppScan、WebInspect</p>
+<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>为什么进行性能测试： 多个客户端同时访问造成压力</p>
+<p>种类：<br>负载测试、压力测试、容量测试、配置测试、并发测试、可靠性测试、稳定性测试、<br><img src="https://img-blog.csdnimg.cn/20190430153946805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="LoadRunner（商用）"><a href="#LoadRunner（商用）" class="headerlink" title="LoadRunner（商用）"></a>LoadRunner（商用）</h2><p>通过模拟一个多用户并行工作的环境来对应用程序进行负载测试。</p>
+<h1 id="手机-APP-测试"><a href="#手机-APP-测试" class="headerlink" title="手机 APP 测试"></a>手机 APP 测试</h1><h2 id="移动-app-测试的区别"><a href="#移动-app-测试的区别" class="headerlink" title="移动 app 测试的区别"></a>移动 app 测试的区别</h2><p>——场合复杂程度<br>”弱网概念“ 网络信号不稳定<br>——输入种类多样性<br>——操作尺度：触屏操作尺度大，点击误差大，也不支持 hover 事件，点击出错率高<br>——界面布局：屏幕相对窄小，一般单列，屏幕可以旋转</p>
+<h2 id="APP-测试方法"><a href="#APP-测试方法" class="headerlink" title="APP 测试方法"></a>APP 测试方法</h2><ol>
+<li>功能测试</li>
+<li>专项测试</li>
+<li>稳定性测试</li>
+<li>兼容性测试</li>
+<li>UI 测试<br><img src="https://img-blog.csdnimg.cn/20190430160004568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<h2 id="专项测试——安装测试"><a href="#专项测试——安装测试" class="headerlink" title="专项测试——安装测试"></a>专项测试——安装测试</h2><p>1、从不同渠道获取安装程序是否正常安装<br>2、不同操作系统下安装是否正常<br>3、安装后是否鞥正常运行，安装后文件是否写到制定目录中<br>4、过程中是否可以取消，点击取消后写入的文件是否跟概要设计说明处理<br>5、安装过程中意外情况（死机、重启、断电）处理<br>6、安装空间不足是否有相应提示<br>……</p>
+<h2 id="专项测试——卸载测试、交互测试、升级测试、性能测试"><a href="#专项测试——卸载测试、交互测试、升级测试、性能测试" class="headerlink" title="专项测试——卸载测试、交互测试、升级测试、性能测试"></a>专项测试——卸载测试、交互测试、升级测试、性能测试</h2><p>多个 app 同时运行是否影响、运行时前后台切换是否正常、运行时切换其他 app、运行拨打电话、切换网络等等</p>
+<h2 id="UI-测试"><a href="#UI-测试" class="headerlink" title="UI 测试"></a>UI 测试</h2><p><img src="https://img-blog.csdnimg.cn/20190430160814445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="APP-自动化测试工具——Appium"><a href="#APP-自动化测试工具——Appium" class="headerlink" title="APP 自动化测试工具——Appium"></a>APP 自动化测试工具——Appium</h2>
       
     </div>
     
@@ -421,7 +465,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面经/" rel="tag"># 面经</a>
+            <a href="/tags/测试笔记/" rel="tag"># 测试笔记</a>
           
         </div>
       
@@ -434,14 +478,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/07/功能测试笔记PART3/" rel="next" title="功能测试笔记PART3-软件测试执行管理">
+                <i class="fa fa-chevron-left"></i> 功能测试笔记PART3-软件测试执行管理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/07/功能测试笔记PART1测试理念/" rel="prev" title="功能测试笔记PART1测试理念">
-                功能测试笔记PART1测试理念 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/07/功能测试笔记PART5-软件测试报告、验收测试/" rel="prev" title="功能测试笔记PART5-软件测试报告、验收测试">
+                功能测试笔记PART5-软件测试报告、验收测试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,7 +591,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -599,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典等价类划分面试题-【购成三角形】问题思考"><span class="nav-text">经典等价类划分面试题-【购成三角形】问题思考</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#经典因果图判定表面试题-【犯错扣工资】问题"><span class="nav-text">经典因果图判定表面试题-【犯错扣工资】问题</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#白盒测试"><span class="nav-text">白盒测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、逻辑覆盖"><span class="nav-text">一、逻辑覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、语句覆盖"><span class="nav-text">二、语句覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、条件覆盖"><span class="nav-text">三、条件覆盖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动化测试"><span class="nav-text">自动化测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Selenium"><span class="nav-text">Selenium</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web-安全测试"><span class="nav-text">web 安全测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB-安全漏洞分类"><span class="nav-text">WEB 安全漏洞分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WASC"><span class="nav-text">WASC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OWASP"><span class="nav-text">OWASP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化审计工具"><span class="nav-text">自动化审计工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能测试"><span class="nav-text">性能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LoadRunner（商用）"><span class="nav-text">LoadRunner（商用）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手机-APP-测试"><span class="nav-text">手机 APP 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动-app-测试的区别"><span class="nav-text">移动 app 测试的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APP-测试方法"><span class="nav-text">APP 测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专项测试——安装测试"><span class="nav-text">专项测试——安装测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专项测试——卸载测试、交互测试、升级测试、性能测试"><span class="nav-text">专项测试——卸载测试、交互测试、升级测试、性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI-测试"><span class="nav-text">UI 测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APP-自动化测试工具——Appium"><span class="nav-text">APP 自动化测试工具——Appium</span></a></li></ol></li></ol></div>
             
 
           </div>

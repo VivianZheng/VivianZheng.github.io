@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cat (32).png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cat (16).png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试笔记,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'M Viv" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta name="keywords" content="测试笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="功能测试笔记PART2-测试用例设计方法与实战">
+<meta property="og:url" content="http://www.imviv.com/2019/05/07/功能测试笔记PART2/index.html">
+<meta property="og:site_name" content="I&#39;M Viv">
+<meta property="og:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190419123555436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190419160939861.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190419161559183.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190419162129147.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190419162756914.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019042023055882.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420230615788.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421150740325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421150751607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421155734530.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421161636925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421161737868.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421161850422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421201957243.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421202912822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421202936516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421202952462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421203158612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421203233551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/201904212032481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190421203611787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424212608610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424212704495.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424212826804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424213118339.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424213137114.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424213157132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424213249753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424213344363.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424215635974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424215946224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424220044891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424221847306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222320627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222338802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222506248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-05-07T08:01:51.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="功能测试笔记PART2-测试用例设计方法与实战">
+<meta name="twitter:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190419123555436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.imviv.com/2019/05/07/功能测试笔记PART2/">
+
+
+
+
+
+  <title>功能测试笔记PART2-测试用例设计方法与实战 | I'M Viv</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I'M Viv</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A cute Aquarius.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tasks"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.imviv.com/2019/05/07/功能测试笔记PART2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Viv">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/vivianzheng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'M Viv">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">功能测试笔记PART2-测试用例设计方法与实战</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T15:03:39+08:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">测试笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="如何设计软件设计【测试用例设计】"><a href="#如何设计软件设计【测试用例设计】" class="headerlink" title="如何设计软件设计【测试用例设计】"></a>如何设计软件设计【测试用例设计】</h1><h2 id="一、测试设计与测试用例"><a href="#一、测试设计与测试用例" class="headerlink" title="一、测试设计与测试用例"></a>一、测试设计与测试用例</h2><ul>
+<li>测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。</li>
+</ul>
+<p>测试分析和设计的主要任务：</p>
+<ol>
+<li>评审测试依据<br>（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。</li>
+<li>评估测试依据和测试对象的可靠性<br>（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但是没有记录到文档中）<a id="more"></a></li>
+<li>通过对测试项、规格说明、测试对象行为和结构分析，识别测试条件并确定优先级</li>
+<li>设计测试用例，并确定优先级</li>
+<li>确定<strong>测试条件</strong>和<strong>测试用例</strong>所需的必要的测试数据</li>
+</ol>
+<p><strong>确定测试条件</strong></p>
+<ol>
+<li>依据在测试策略或测试计划中确定的测试技术。比如 要做性能自动化兼容测试等.</li>
+<li>通过对测试依据和测试目标的分析。可以确定需要测试的内容，获得测试条件。</li>
+</ol>
+<p><strong>确定测试用例</strong></p>
+<ol>
+<li>测试用例：是通过使用在测试计划中确定的测试技术，对于已确定的测试条件进行逐步推敲，精炼而设计出来的重点说明如何具体操作产生何种结果的文档。（指引测试的步骤文档，包含场景、方法论 等的设计）</li>
+<li>测试用例应该具有 <strong>可重复性</strong>、<strong>可验证性</strong> 和<strong>需求可追踪性</strong> 不能一概而说。</li>
+</ol>
+<p><strong>测试用例设计包括以下关键点</strong></p>
+<ol>
+<li>前提条件，如项目或局部测试环境的需求，及其交付计划</li>
+<li>测试步骤</li>
+<li>测试数据</li>
+<li>预期结果</li>
+</ol>
+<p><strong>测试用例案例</strong><br>|序号| 模块名称 | 测试子项 | 用例名称（测试意图） | 用例级别 | 预置条件 | 测试步骤 | 预期结果 | 测试结果 | 缺陷编号 | 备注 |<br>|–|–|–|–|–|–|–|–|–|–|–|<br>| 1 | 大模块 | 小模块 | | | | | | | | | | |<br>|2 | | | | | | | | | | | | |</p>
+<h2 id="测试用例常用设计方法"><a href="#测试用例常用设计方法" class="headerlink" title="测试用例常用设计方法"></a>测试用例常用设计方法</h2><ol>
+<li><strong>等价类划分法</strong></li>
+<li><strong>边界值法</strong></li>
+<li><strong>因果图设计法</strong></li>
+<li><strong>判定表设计法</strong></li>
+<li><strong>正交实验法</strong></li>
+</ol>
+<h2 id="一、等价类划分法"><a href="#一、等价类划分法" class="headerlink" title="一、等价类划分法"></a><strong>一、等价类划分法</strong></h2><p>项目：测试一个两位数的加法计算器<br>测试需求：测试两个参数的值相加后的结果是否正确。</p>
+<ol>
+<li>隐藏需求：输入的数值在-99 到 99 之间 大于 99 或小于-99 的数应该被拒绝输入并显示错误信息。</li>
+</ol>
+<p>开始测试：<br>分别给第一个参数和第二个参数输入下表中的值，得到测试结果如表所示<br><img src="https://img-blog.csdnimg.cn/20190419123555436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>不能把-99 到 99 所有数的相加情况都测试一遍，那么问题有：<br>1、在测试了 1+1 1+2 1+（-1） 等这些情况之后，是否还有必要测试 1+3，1+4 呢<br>2、如果不穷举测试，能否放心的认为所有的参数组合都是正确的？</p>
+<p><strong>等价类划分法：概念</strong></p>
+<ol>
+<li>把程序的输入域划分为若干部分</li>
+<li>然后从每个部分中选取少数代表性数据作为测试用例</li>
+<li><p>每一类的代表性数据在测试中的作用等价于这一类中的其他值</p>
+<p>也就是说，如果某一类中的例子发现了错误，这一等价类中其他例子也能发现同样错误，反之同理。</p>
+</li>
+</ol>
+<p><strong>等价类划分法：原则</strong></p>
+<ol>
+<li>如果输入条件规定了取值范围或值的个数，则可以确定一个有效等价类和两个无效等价类。<br>比如 [-99,99]为取值区间，则大于 99 和小于-99 的都是无效等价类</li>
+<li>如果输入条件说明了一个“必须成立”的情况，则可划分一个有效等价类和一个无效等价类。<br>比如 “今天必须完成 100 题” ，则“完成 100 题”是有效等价类 “未完成 100 题”是无效等价类。</li>
+<li><p>如果输入条件规定了一组可能的值，而且程序是用不同的方式处理每一种值，则可为每一种值划分一个有效等价类，并划分一个无效等价类。</p>
+</li>
+<li><p>如果确知，已划分的某等价类中的各元素（例子）在程序中处理的方式是不同的，则应据此将此等价类进一步划分为更小的等价类。</p>
+</li>
+<li><p>确立了等价类之后，建立等价类表，列出所有划分出的等价类。</p>
+</li>
+</ol>
+<p><strong>基于等价类划分的用例设计</strong></p>
+<ol>
+<li>明确测试对象，非测试对象保证正确。</li>
+<li>为每个等价类规定一个唯一编号</li>
+<li>设计测试用例，尽可能多的覆盖尚未覆盖的有效等价类。 重复，最终似的所有等价类均被测试用例覆盖。</li>
+<li>设计一个新的测试，使其只覆盖一个无效等价类。重复，直至所有无效等价类均被覆盖。</li>
+</ol>
+<h3 id="等价类划分实战"><a href="#等价类划分实战" class="headerlink" title="等价类划分实战"></a>等价类划分实战</h3><p><em>项目：测试一个两位数的加法计算器<br>测试需求：测试两个参数的值相加后的结果是否正确。</em></p>
+<p>Step1：根据测试需求可以分为三个等价类：<br>1、一个有效数据的等价类，两个无效数据等价类<br>有效等价类： -99&lt;=数值&lt;=99<br>无效等价类：数值<-99 数值>99<br>Step2：建立等价类表：<br><img src="https://img-blog.csdnimg.cn/20190419160939861.png" alt="在这里插入图片描述"><br>Step3：确定测试用例：<br>1、为等价类表中的每一个等价类分配一个唯一编号<br>2、设计一个新的测试用例，使它能够尽量覆盖尚未覆盖的有效等价类<br>3、重复，直至所有有效等价类均被测试用例覆盖<br>4、与上步类似，设计一个新的测试用例，使它只覆盖一个无效等价类<br>5、重复，直至所有无效等价类均被测试用例覆盖<br><img src="https://img-blog.csdnimg.cn/20190419161559183.png" alt="在这里插入图片描述"><br>Step4：细化等价类划分</-99></p>
+<ol>
+<li>在测试”-99~99“的这个等价类区间时，10+40、-20+30、-30+（-30）正数相加、正负数相加、负数相加也是不同的等价区间</li>
+</ol>
+<p><strong>细化之后的等价类表</strong><br><img src="https://img-blog.csdnimg.cn/20190419162129147.png" alt="在这里插入图片描述"><br>PS：无效等价类中还有非数字情况，可以加上。</p>
+<p>Step5：完善测试用例</p>
+<p>根据上面划分的 4 个等价类，我们至少需要有 5 个测试用例<br><img src="https://img-blog.csdnimg.cn/20190419162756914.png" alt="在这里插入图片描述"></p>
+<p><strong>等价类的特点</strong></p>
+<ol>
+<li>测试相同的内容</li>
+<li>如果等价类中的一个测试能够捕获一个 bug，那么选择该等价类的其他测试也能捕获该 bug</li>
+<li>如果等价类中的一个测试不能捕获 bug，那么其他的也不能</li>
+<li>如果正确的划分等价类，可以大大降低测试用例的数量，测试会准确有效</li>
+<li>如果错误的将两个不同的等价类当作一个等价类，就会遗漏一种测试情况</li>
+</ol>
+<p><strong>等价类划分要注意的问题</strong></p>
+<ol>
+<li>不但要考虑有效等价类，也要考虑无效等价类</li>
+<li>仔细划分，审查划分 （实际不仅一个人划分，群策群力，还有评审）</li>
+<li>过于粗略可能会漏掉 bug</li>
+<li>组织评审</li>
+</ol>
+<h3 id="【等价类用例设计练习】"><a href="#【等价类用例设计练习】" class="headerlink" title="【等价类用例设计练习】"></a>【等价类用例设计练习】</h3><p><strong>测试需求：余额宝提现到银行卡增加新规则：快速到账（2h）日限额 1w</strong></p>
+<p><strong>分析过程：</strong></p>
+<ol>
+<li>超过 1W 只能选择普通到账</li>
+<li>选择快速到账才有限制</li>
+</ol>
+<p><strong>设计用例</strong><br><strong>思路：</strong>首先分为两个功能（快速提现和普通提现），然后快速提现要求金额在 0 和 1W 之间（有效等价类），提现小于 0 和大于 1W 都是无效。其次普通提现不受限制，只要求提现金额在 0 和余额之间即可，（所以 0 和总余额之间都是有效值），无效指为小于 0 以及大于总余额。<img src="https://img-blog.csdnimg.cn/2019042023055882.png" alt="在这里插入图片描述"><br><strong>优化：</strong><br>日限额 1W，可以是当天多次提现，要对总提现额度做划分（第一次和第 N 次）<br><img src="https://img-blog.csdnimg.cn/20190420230615788.png" alt="在这里插入图片描述"><br>PS：由于每次操作对应的功能场景不一样，所以每次无效等价类对应的&lt;=0 的情况都是不同的，比如第一次输入的提现金额为 0 和第二次提现金额 0 是不一样的。</p>
+<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>需求说明：一个程序读入三个整数，把这三个数值看作一个三角形的 3 条边的长度值<br>利用等价类划分法，给出足够的测试用例。<br><img src="https://img-blog.csdnimg.cn/20190421150740325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190421150751607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>优化建议：<br><img src="https://img-blog.csdnimg.cn/20190421155734530.png" alt="在这里插入图片描述"></p>
+<hr>
+<h2 id="二、边界值划分法"><a href="#二、边界值划分法" class="headerlink" title="二、边界值划分法"></a>二、边界值划分法</h2><p><strong>边界值分析法是一种补充等价划分的测试用例设计技术，它不是选择等价类的任意元素，二十选择等价类边界的测试用例。</strong></p>
+<p>以两位数相加计算器为例<br><img src="https://img-blog.csdnimg.cn/20190421161636925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>由于允许输入的值在-99 和 99 之间，所以-99 和 99 可看作两个边界值，测试的时候选取紧邻边界值的数值和边界值本身：<br><img src="https://img-blog.csdnimg.cn/20190421161737868.png" alt="在这里插入图片描述"></p>
+<h2 id="用边界值设计余额宝需求测试用例"><a href="#用边界值设计余额宝需求测试用例" class="headerlink" title="用边界值设计余额宝需求测试用例"></a>用边界值设计余额宝需求测试用例</h2><p>思路：边界为 0、1W-已提现金额、1W，总余额最大值，取边界和紧邻边界的值：-1、0、1、9999、10001 等<br><img src="https://img-blog.csdnimg.cn/20190421161850422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>PS：最大值为约定数值，比如余额宝中最多可输入七位数。</p>
+<h2 id="三、因果图和判定表法"><a href="#三、因果图和判定表法" class="headerlink" title="三、因果图和判定表法"></a>三、因果图和判定表法</h2><p>等价类划分和边界值分析都是着重考虑输入条件，而不考虑输入条件的各种组合、输入条件之间的相互制约关系。</p>
+<p>如果在测试时必须考虑输入条件的各种组合，则可能的组合数目将是天文数字，因此必须考虑采用一种<strong>适合于描述多种条件的组合、产生多个相应动作的测试方法，就需要因果图（逻辑模型）</strong></p>
+<ol>
+<li>因果图：从程序规格说明书中找出<strong>因（输入条件）</strong> 和 <strong>果（输出结果或程序状态的改变）</strong></li>
+<li>将因果图转化为判定表。为判定表中的每一列设计一个测试用例。</li>
+</ol>
+<p><strong>判定表</strong>：分析和表达多逻辑条件下执行不同操作的工具。</p>
+<p>由四个部分组成：</p>
+<ol>
+<li>条件桩：列出了问题的所有条件，次序一般无所谓。</li>
+<li>动作桩：列出可能的操作和结果。</li>
+<li>条件项：列出针对它左列条件的取值，在所有可能情况下的真假值。</li>
+<li>动作项：列出条件项的各种取值情况下应该采取的动作。<br><img src="https://img-blog.csdnimg.cn/20190421201957243.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<h2 id="因果图设计步骤："><a href="#因果图设计步骤：" class="headerlink" title="因果图设计步骤："></a>因果图设计步骤：</h2><p>1、分析软件规格中那些是原因，哪些是结果？并给每个原因和结果赋予一个标识符。</p>
+<p>2、找到原因和结果之间、原因和原因之间的相互关系。</p>
+<p>3、有些组合情况不可能出现，为表明这些情况，在因果图上使用一些记号表明约束或限制条件。</p>
+<p>4、把因果图转换为判定表。</p>
+<p>5、根据判定表的每列设计用例。</p>
+<p><strong>两位数计算器实战</strong> <img src="https://img-blog.csdnimg.cn/20190421202912822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="1"><br><img src="https://img-blog.csdnimg.cn/20190421202936516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190421202952462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190421203158612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>余额宝例子</strong><br><img src="https://img-blog.csdnimg.cn/20190421203233551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/201904212032481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>面试题 【工资发放】<br>a1 年薪制 a2 月薪制 a3 普通错误 a4 严重错误<br><img src="https://img-blog.csdnimg.cn/20190421203611787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>a1 和 a2 互斥；b1 b2 和 b3 b4 互斥 a3 和 a4 可同时具备。</p>
+<h2 id="四、正交实验法"><a href="#四、正交实验法" class="headerlink" title="四、正交实验法"></a>四、正交实验法</h2><p>是从大量的试验点中选取适量的、有代表性的点，应用迦罗卡瓦理论导出的“正交表”，合理的安排试验的一种科学试验设计法。<strong>（很少用到，一般大型系统才会用到，正常情况下极少有穷举所有的情况）</strong><br><img src="https://img-blog.csdnimg.cn/20190424212608610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="一般适合将实验对象琼剧"></p>
+<p><strong>设计步骤</strong><br>1、提取功能说明，构造因子——状态表<br><img src="https://img-blog.csdnimg.cn/20190424212704495.png" alt="在这里插入图片描述"><br>2、加权筛选，生成因素分析表（优先级确定，删掉优先级低的）<br>3、利用正交表构造测试数据集<br>4、利用正交表每行数据构造测试用例<br><img src="https://img-blog.csdnimg.cn/20190424212826804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>案例：测试支付宝 web 网站，站点有大量的服务器和操作系统，并且有多种浏览器及其插件</strong><br><img src="https://img-blog.csdnimg.cn/20190424213118339.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424213137114.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424213157132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424213249753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424213344363.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="五、场景法"><a href="#五、场景法" class="headerlink" title="五、场景法"></a>五、场景法</h2><p>由于上述方法比较单一从输入输出两方面考虑，但现在的软件几乎都是事件触发来控制流程的，事件触发时的情景形成场景，而<strong>同一事件不同的触发顺序和处理结果就形成了事件流</strong>。<br><img src="https://img-blog.csdnimg.cn/20190424215635974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>tb 购物流程<br><img src="https://img-blog.csdnimg.cn/20190424215946224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424220044891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="测试用例综合设计"><a href="#测试用例综合设计" class="headerlink" title="测试用例综合设计"></a>测试用例综合设计</h1><h2 id="1、测试用例项划分"><a href="#1、测试用例项划分" class="headerlink" title="1、测试用例项划分"></a>1、测试用例项划分</h2><p>经典方法：瀑布模型，从上到下，逐渐细分，大模块包含小模块，更小模块（类似俄罗斯套娃），把系统划分成一块一块的，来测试，保证系统的完整性。</p>
+<h2 id="2、切面设计"><a href="#2、切面设计" class="headerlink" title="2、切面设计"></a>2、切面设计</h2><p>功能点切面：最常见的切面，通常认为页面上的一个按钮就是一个功能点。根据功能的复杂程度，按每个功能进行用例的撰写。<br>隐含切面：完整业务流程的测试；从需求、业务角度进行编写。比如完整的购物流程。</p>
+<h2 id="3、功能点用例设计"><a href="#3、功能点用例设计" class="headerlink" title="3、功能点用例设计"></a>3、功能点用例设计</h2><ol>
+<li><strong>任何情况都必须使用边界值分析法</strong>，经验表明这种方法找出 bug 能力最强</li>
+<li>必要时用等价类划分法补充</li>
+<li>如果程序功能说明中含有输入条件的组合情况，则可以用因果图法</li>
+<li>业务复杂度高，则补充场景法</li>
+</ol>
+<p>举例：共享单车充值案例</p>
+<p>1、边界值：充值金额 0、1、-1、多位小数、银行卡限额等<br>2、充值选择不同银行、支付渠道，所以针对支付宝、微信、银联等渠道分别设计测试用例<br>3、考虑异常，充值失败，银行卡余额不足，银行账户异常，银行卡返回超时等。场景法<br>4、更复杂的业务场景，比如满减、满赠、抽奖等等</p>
+<p>———————————————–分割线——————————————————–<br><img src="https://img-blog.csdnimg.cn/20190424221847306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424222320627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190424222338802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190424222506248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/测试笔记/" rel="tag"># 测试笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/功能测试笔记PART1测试理念/" rel="next" title="功能测试笔记PART1测试理念">
+                <i class="fa fa-chevron-left"></i> 功能测试笔记PART1测试理念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/07/功能测试笔记PART3/" rel="prev" title="功能测试笔记PART3-软件测试执行管理">
+                功能测试笔记PART3-软件测试执行管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/vivianzheng.png" alt="Viv">
+            
+              <p class="site-author-name" itemprop="name">Viv</p>
+              <p class="site-description motion-element" itemprop="description">一只水瓶座</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/VivianZheng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:vivian2720@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何设计软件设计【测试用例设计】"><span class="nav-text">如何设计软件设计【测试用例设计】</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、测试设计与测试用例"><span class="nav-text">一、测试设计与测试用例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试用例常用设计方法"><span class="nav-text">测试用例常用设计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、等价类划分法"><span class="nav-text">一、等价类划分法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#等价类划分实战"><span class="nav-text">等价类划分实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【等价类用例设计练习】"><span class="nav-text">【等价类用例设计练习】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-text">思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、边界值划分法"><span class="nav-text">二、边界值划分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用边界值设计余额宝需求测试用例"><span class="nav-text">用边界值设计余额宝需求测试用例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、因果图和判定表法"><span class="nav-text">三、因果图和判定表法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#因果图设计步骤："><span class="nav-text">因果图设计步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、正交实验法"><span class="nav-text">四、正交实验法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、场景法"><span class="nav-text">五、场景法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试用例综合设计"><span class="nav-text">测试用例综合设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、测试用例项划分"><span class="nav-text">1、测试用例项划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、切面设计"><span class="nav-text">2、切面设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、功能点用例设计"><span class="nav-text">3、功能点用例设计</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Viv</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
