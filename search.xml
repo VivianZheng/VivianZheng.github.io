@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[Requests构建http请求]]></title>
-    <url>%2F2019%2F05%2F11%2Fpython%E5%A4%A7%E4%BD%9C%E4%B8%9A%2F</url>
-    <content type="text"><![CDATA[需求：美元价格需要转化成欧元单位。程序要求：1、接收一个 CSV 文件为输入值2、对价格这一列进行货币转换3、输出这个文件的内容 限制条件：1、csv 文件解析器要自己实现，不能用库2、输出文件必须正确3、可以把数据从欧元改回美金 例 1： head data.csv 例 2： ./currency_convert –helpusage:currency_convert&lt;–field N–multiplier N][-i input][-o output] field N 价格信息在 CSV 的第 N 列，需要进行转换 multiplier N 转换方法为把当前的数值乘以 N N 是汇率 i input 从 input 文件内读取 CSV 文件内容（或者从 stdin 读入） o output 输出到 output 文件中（或者输出 stdout） linux 操作指令，规定了一些使用到的命名，以及表明程序使用环境为 linux]]></content>
+    <url>%2F2019%2F05%2F11%2FRequests%E6%9E%84%E5%BB%BAhttp%E8%AF%B7%E6%B1%82%E3%80%81%E5%93%8D%E5%BA%94%E4%B8%8E%E4%BC%9A%E8%AF%9D%2F</url>
+    <content type="text"><![CDATA[123import requestsr = requestes.get(&apos;https://api.github.com/events&apos;)print(r.content) #断点打在这一行 断点调试结果如下： r={Response} 表示r是一个Response的实例。 r.content 是响应的主体内容，以字节bytes的类型保存，把他转换成字典或者字符串之后就是我们想要的响应数据 r.cookies r.elapsed 请求的响应时间 r.status_code http响应的状态码 200\301\400\404\500 r.reason 包含一个短语，如果响应失败，会告诉失败原因 r.request 这个响应对应的请求 r.text 响应中数据转换成的文本 r.url 这个响应来自于哪个url 解析一个响应`import requests,jsonr= requests.get(‘https://api.github.com/events&#39;)print(r.content)dict_json=json.loads(r.content)print(dict_json) cookie 和 session 1.cookie是web服务器保存在用户浏览器上的小文本文件。它包含有关用户的信息，当用户再次访问这个 服务器时，服务器可以直接读取信息，无需再次输入。 2.session，会话。用户通常会在服务器提供的网页之间进行跳转来访问不同的页面，服务器对一个用户创建一个session对象，存放在服务器端，这样服务器就知道这个用户是谁了。session里也可以存放用户名等信息。session一般会过期自动终止. requests中的cookies 响应和请求都有cookie功能]]></content>
       <categories>
         <category>测试笔记</category>
       </categories>
@@ -15,9 +15,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Requests构建http请求]]></title>
-    <url>%2F2019%2F05%2F11%2FRequests%E6%9E%84%E5%BB%BAhttp%E8%AF%B7%E6%B1%82%E3%80%81%E5%93%8D%E5%BA%94%E4%B8%8E%E4%BC%9A%E8%AF%9D%2F</url>
-    <content type="text"><![CDATA[123import requestsr = requestes.get(&apos;https://api.github.com/events&apos;)print(r.content) #断点打在这一行 断点调试结果如下： r={Response} 表示r是一个Response的实例。 r.content 是响应的主体内容，以字节bytes的类型保存，把他转换成字典或者字符串之后就是我们想要的响应数据 r.cookies r.elapsed 请求的响应时间 r.status_code http响应的状态码 200\301\400\404\500 r.reason 包含一个短语，如果响应失败，会告诉失败原因 r.request 这个响应对应的请求 r.text 响应中数据转换成的文本 r.url 这个响应来自于哪个url 解析一个响应`import requests,jsonr= requests.get(‘https://api.github.com/events&#39;)print(r.content)dict_json=json.loads(r.content)print(dict_json) cookie 和 session 1.cookie是web服务器保存在用户浏览器上的小文本文件。它包含有关用户的信息，当用户再次访问这个 服务器时，服务器可以直接读取信息，无需再次输入。 2.session，会话。用户通常会在服务器提供的网页之间进行跳转来访问不同的页面，服务器对一个用户创建一个session对象，存放在服务器端，这样服务器就知道这个用户是谁了。session里也可以存放用户名等信息。session一般会过期自动终止. requests中的cookies 响应和请求都有cookie功能]]></content>
+    <title><![CDATA[Linux运行Python程序实现汇率转换]]></title>
+    <url>%2F2019%2F05%2F11%2Fpython%E5%A4%A7%E4%BD%9C%E4%B8%9A%2F</url>
+    <content type="text"><![CDATA[需求：美元价格需要转化成欧元单位。程序要求：1、接收一个 CSV 文件为输入值2、对价格这一列进行货币转换3、输出这个文件的内容 限制条件：1、csv 文件解析器要自己实现，不能用库2、输出文件必须正确3、可以把数据从欧元改回美金 例 1： head data.csv 例 2： ./currency_convert –helpusage:currency_convert&lt;–field N–multiplier N][-i input][-o output] field N 价格信息在 CSV 的第 N 列，需要进行转换 multiplier N 转换方法为把当前的数值乘以 N N 是汇率 i input 从 input 文件内读取 CSV 文件内容（或者从 stdin 读入） o output 输出到 output 文件中（或者输出 stdout） linux 操作指令，规定了一些使用到的命名，以及表明程序使用环境为 linux]]></content>
       <categories>
         <category>测试笔记</category>
       </categories>
