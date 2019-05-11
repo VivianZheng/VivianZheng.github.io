@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta name="description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：">
 <meta name="keywords" content="测试笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="功能测试笔记PART2-测试用例设计方法与实战">
 <meta property="og:url" content="http://www.imviv.com/2019/05/07/功能测试笔记PART2/index.html">
 <meta property="og:site_name" content="I&#39;M Viv">
-<meta property="og:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta property="og:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190419123555436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190419160939861.png">
@@ -125,10 +125,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222320627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222338802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190424222506248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-05-07T08:01:51.145Z">
+<meta property="og:updated_time" content="2019-05-11T11:37:59.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="功能测试笔记PART2-测试用例设计方法与实战">
-<meta name="twitter:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：  评审测试依据（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。 评估测试依据和测试对象的可靠性（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但">
+<meta name="twitter:description" content="如何设计软件设计【测试用例设计】一、测试设计与测试用例 测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。  测试分析和设计的主要任务：">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190419123555436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyOTM4OTUx,size_16,color_FFFFFF,t_70">
 
 
@@ -426,10 +426,10 @@
         <h1 id="如何设计软件设计【测试用例设计】"><a href="#如何设计软件设计【测试用例设计】" class="headerlink" title="如何设计软件设计【测试用例设计】"></a>如何设计软件设计【测试用例设计】</h1><h2 id="一、测试设计与测试用例"><a href="#一、测试设计与测试用例" class="headerlink" title="一、测试设计与测试用例"></a>一、测试设计与测试用例</h2><ul>
 <li>测试设计：将概括的测试目标转化为具体的测试条件和测试用例的一系列活动。</li>
 </ul>
-<p>测试分析和设计的主要任务：</p>
+<p>测试分析和设计的主要任务：<br><a id="more"></a></p>
 <ol>
 <li>评审测试依据<br>（需求、系统架构、设计、接口说明等）做到心中有数，理解北侧的系统是什么状态，包含什么内容。</li>
-<li>评估测试依据和测试对象的可靠性<br>（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但是没有记录到文档中）<a id="more"></a></li>
+<li>评估测试依据和测试对象的可靠性<br>（文档很完善，但是到了实际测试过程中发现实际情况和文档不一样，项目迭代和运行过程中，需求接口等一直在变，但是没有记录到文档中）<!--more--></li>
 <li>通过对测试项、规格说明、测试对象行为和结构分析，识别测试条件并确定优先级</li>
 <li>设计测试用例，并确定优先级</li>
 <li>确定<strong>测试条件</strong>和<strong>测试用例</strong>所需的必要的测试数据</li>
@@ -451,7 +451,7 @@
 <li>测试数据</li>
 <li>预期结果</li>
 </ol>
-<p><strong>测试用例案例</strong><br>|序号| 模块名称 | 测试子项 | 用例名称（测试意图） | 用例级别 | 预置条件 | 测试步骤 | 预期结果 | 测试结果 | 缺陷编号 | 备注 |<br>|–|–|–|–|–|–|–|–|–|–|–|<br>| 1 | 大模块 | 小模块 | | | | | | | | | | |<br>|2 | | | | | | | | | | | | |</p>
+<p><strong>测试用例案例</strong><br>| 序号 | 模块名称 | 测试子项 | 用例名称（测试意图） | 用例级别 | 预置条件 | 测试步骤 | 预期结果 | 测试结果 | 缺陷编号 | 备注 |<br>| —- | ——– | ——– | ——————– | ——– | ——– | ——– | ——– | ——– | ——– | —- |<br>| 1    | 大模块   | 小模块   |                      |          |          |          |          |          |          |      |  |  |<br>| 2    |          |          |                      |          |          |          |          |          |          |      |  |  |</p>
 <h2 id="测试用例常用设计方法"><a href="#测试用例常用设计方法" class="headerlink" title="测试用例常用设计方法"></a>测试用例常用设计方法</h2><ol>
 <li><strong>等价类划分法</strong></li>
 <li><strong>边界值法</strong></li>
@@ -680,7 +680,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -702,7 +702,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

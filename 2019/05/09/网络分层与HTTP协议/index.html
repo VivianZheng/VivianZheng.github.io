@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="HTTP,SMTP,FTP,">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="一只水瓶座">
-<meta name="keywords" content="abcdefg">
-<meta property="og:type" content="website">
-<meta property="og:title" content="����">
-<meta property="og:url" content="http://www.imviv.com/categories/index.html">
+<meta name="description" content="接口测试手工测试是在图形界面操作，而接口测试则是把图形界面改成了接口测试的工具或脚本。  服务端程序接口测试的目标通常就是服务端程序。">
+<meta name="keywords" content="HTTP,SMTP,FTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络分层与HTTP协议">
+<meta property="og:url" content="http://www.imviv.com/2019/05/09/网络分层与HTTP协议/index.html">
 <meta property="og:site_name" content="I&#39;M Viv">
-<meta property="og:description" content="一只水瓶座">
+<meta property="og:description" content="接口测试手工测试是在图形界面操作，而接口测试则是把图形界面改成了接口测试的工具或脚本。  服务端程序接口测试的目标通常就是服务端程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T05:34:27.359Z">
+<meta property="og:image" content="e:/Hexo/source_posts/五层因特网协议栈.png">
+<meta property="og:updated_time" content="2019-05-11T11:38:26.173Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="����">
-<meta name="twitter:description" content="一只水瓶座">
+<meta name="twitter:title" content="网络分层与HTTP协议">
+<meta name="twitter:description" content="接口测试手工测试是在图形界面操作，而接口测试则是把图形界面改成了接口测试的工具或脚本。  服务端程序接口测试的目标通常就是服务端程序。">
+<meta name="twitter:image" content="e:/Hexo/source_posts/五层因特网协议栈.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://www.imviv.com/categories/">
+  <link rel="canonical" href="http://www.imviv.com/2019/05/09/网络分层与HTTP协议/">
 
 
 
 
 
-  <title>���� | I'M Viv</title>
+  <title>网络分层与HTTP协议 | I'M Viv</title>
   
 
 
@@ -285,33 +287,192 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.imviv.com/2019/05/09/网络分层与HTTP协议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Viv">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/vivianzheng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'M Viv">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">����</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">网络分层与HTTP协议</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T19:44:30+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">测试笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h1><p>手工测试是在图形界面操作，而接口测试则是把图形界面改成了接口测试的工具或脚本。</p>
+<ul>
+<li>服务端程序<br>接口测试的目标通常就是服务端程序。<a id="more"></a></li>
+<li>图形界面<br>程序提供给用户使用的界面。又叫 UI（User Interface）、图形化用户接口（GUI）</li>
+<li>数据<br>数据以包的形式在客户端和服务端程序之间传输，包的类型取决于封装在网络的哪一层。来回的过程涉及到封包和解包。</li>
+<li>工具或脚本<br>用工具模拟客户端程序的工作，像客户端一样封包，数据发送，在收到服务端返回信息后，解包，呈现数据。<br>这种用代码模拟的做法，成为 Mock</li>
+</ul>
+<h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><h2 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h2><p>网络协议定义了计算机之间通信的方式,协议的核心是<strong>请求</strong>和<strong>响应</strong><br>协议定义了通信实体间,交换的报文格式,次序,以及发送和接受报文的方式,及处理动作.</p>
+<h2 id="网络分层"><a href="#网络分层" class="headerlink" title="网络分层"></a>网络分层</h2><p><img src="E:\Hexo\source_posts\五层因特网协议栈.png" alt="五层因特网协议栈"></p>
+<h3 id="应用层和-HTTP-协议"><a href="#应用层和-HTTP-协议" class="headerlink" title="应用层和 HTTP 协议"></a>应用层和 HTTP 协议</h3><p>HTTP请求的三个组成部分：<br>请求行：方法（get、post、delete等），URL，协议版本<br>Hearder 头部<br>Body请求体</p>
+<p>服务器给的响应：<br>状态行：版本、状态码、短语，比如HTTP1.1 404 NotFound<br>Hearder 头部<br>Body 请求体</p>
+<p>状态码：<br>200 请求成功<br>301 Moved Permanetnly 请求内容已永久转移<br>400 Bad Request 错误请求内容<br>404 Not Found 请求资源找不到<br>500 InternalServerError 服务器内部错误</p>
+<h3 id="传输层和-TCP协议-UDP协议"><a href="#传输层和-TCP协议-UDP协议" class="headerlink" title="传输层和 TCP协议 UDP协议"></a>传输层和 TCP协议 UDP协议</h3><p>传输层传输的是报文段，把应用层的报文从一个端传送到另一个端，应用层的报文，比如HTTP报文，可以通过TCP或者UDP来传输。</p>
+<p>TCP：面向连接，能确保报文被传送到目的地，如果目的地没收到，会重新传。<br>UDP：无连接，只把报文发出去。</p>
+<p><strong>TCP三次握手：</strong></p>
+<p>第一次握手：建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。</p>
+<p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（seq=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
+<p>第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</p>
+<p>完成三次握手，客户端与服务器开始传送数据。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          
+            <a href="/tags/SMTP/" rel="tag"># SMTP</a>
+          
+            <a href="/tags/FTP/" rel="tag"># FTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/如何用VS-code快乐写python脚本，并配合selenium实现自动化测试/" rel="next" title="如何用VS code快乐写python，并配合selenium实现自动化测试">
+                <i class="fa fa-chevron-left"></i> 如何用VS code快乐写python，并配合selenium实现自动化测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/11/Requests构建http请求、响应与会话/" rel="prev" title="Requests构建http请求">
+                Requests构建http请求 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -344,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -430,6 +600,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口测试"><span class="nav-text">接口测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协议"><span class="nav-text">协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是协议"><span class="nav-text">什么是协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络分层"><span class="nav-text">网络分层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层和-HTTP-协议"><span class="nav-text">应用层和 HTTP 协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层和-TCP协议-UDP协议"><span class="nav-text">传输层和 TCP协议 UDP协议</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
